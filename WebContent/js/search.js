@@ -17,7 +17,7 @@ $(document).ready(function(){
 		$("#crono").text(gCustomSearch.getCrono());
 		$("#resultsFrom").text(gCustomSearch.getResultsFrom());
 		$("#resultsTo").text(gCustomSearch.getResultsTo());
-		gCustomSearch.applyPagination( $("#pagination") , $("#pagination-tmpl"), 10 );
+		gCustomSearch.applyPagination( $("#pagination"), $("#pagination-tmpl"), 10 );
 	
 	});
 	
