@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+	
+		<title>solrSearch - Search Box</title>
+		
+		<meta charset="utf-8">
+		<meta name="keywords" content="solrSearch, google custom search, search, engine, SERP, results, google">
+		
+		<meta name="title" content="solrSearch - Search Box" />
+		<meta name="description" content="solrSearch Box" />
+		
+		<meta name="author" content="luisjime">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- jquery 1.7.1 -->
+		<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+		
+		<!--jQuery templates -->
+		<script src="js/jquery.tmpl.min.js" type="text/javascript"></script>
+		
+		<!-- Twitter bootstrap 2.0.4 -->
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+			
+		<!-- gCustomSearch -->
+		<script src='js/jquery.solrsearch.js' type="text/javascript"></script>
+		<script src='js/search.js' type="text/javascript"></script>
+		
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+				
+		<!-- bootstrap 2.0.4 -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		
+		<!-- Search Results Styling -->
+		<link href="css/general.css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div class="container">
+		
+			<div class="row">
+				<div class="span12">
+					<h1>solrSearch</h1>
+					<hr>
+				</div>
+			</div>
+				
+			<div class="row">
+				<div id="search-box" class="span8 offset2">	
+						<form class="form-search input-append" action="serp.html" method="get" name="searchform" id="searchform">
+							<input type="text" name="q" class="span4">
+							<button type="submit" class="btn">Search <i class="icon-search"></i></button>
+						</form>
+				</div>
+			</div>
+					
+		</div>
+	</body>
+</html>

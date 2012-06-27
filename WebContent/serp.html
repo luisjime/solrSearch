@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+	
+		<title>solrSearch - Search Engine Results Page</title>
+		
+		<meta charset="utf-8">
+		<meta name="keywords" content="solrSearch, google custom search, search, engine, SERP, results, google">
+		
+		<meta name="title" content="solrSearch - Search Engine Results Page" />
+		<meta name="description" content="gCustomSearch Search Engine Results Page" />
+		
+		<meta name="author" content="luisjime">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- jquery 1.7.1 -->
+		<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+		
+		<!--jQuery templates -->
+		<script src="js/jquery.tmpl.min.js" type="text/javascript"></script>
+		
+		<!-- Twitter bootstrap 2.0.4 -->
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+			
+		<!-- gCustomSearch -->
+		<script src='js/jquery.solrsearch.js' type="text/javascript"></script>
+		<script src='js/search.js' type="text/javascript"></script>
+		
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+				
+		<!-- bootstrap 2.0.4 -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		
+		<!-- Search Results Styling -->
+		<link href="css/general.css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+	
+		<div class="container">
+			
+			<div class="separator"></div>
+			
+			<div class="row">
+				<div class="span4 offset2">
+					<h1>Search Results</h1>
+				</div>
+				<div id="search-box" class="span4">	
+					<form class="form-search input-append" action="serp.html" method="get" name="searchform" id="searchform">
+						<input type="text" name="q" class="input-large">
+						<button type="submit" class="btn">Search <i class="icon-search"></i></button>
+					</form>
+				</div>
+			</div>
+			
+			<div class="mini-separator"></div>
+
+			<div class="row">
+				<div class="search-info span8 offset2">
+					<span><i class="icon-list-alt"></i> About <strong id="totalResults"></strong> results found for <strong id="theQuery"></strong></span>
+					<span><i class="icon-time"></i> In <strong id="crono"></strong> ms</span>
+					<span><i class="icon-hand-down"></i> Showing: <strong id="resultsFrom"></strong> to <strong id="resultsTo"></strong></span>
+				</div>
+			</div>
+				
+			<div class="row">
+				<div class="span8 offset2">
+					<ul id="search-results">
+						<script id="results-tmpl" type="text/x-jquery-tmpl">
+							<li class="search-result">
+								<h3>
+									<a href="${resAnchorHref}" title="${resAnchorTitle}">
+										{{html resAnchorTitle}}
+									</a>
+								</h3>
+								<p>
+									{{html resSummaryText}}
+								</p>
+								<em class="search-breadcrumbs">
+									<i class="icon-globe"></i> ${resDisplayLinkText}
+								</em>
+							</li>
+						</script>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="pagination span8 offset2">
+					<ul id="pagination">
+						<script id="pagination-tmpl" type="text/x-jquery-tmpl">
+								{{if prev}}
+									<li>
+										<a href="${prevHref}" title="Previous">Prev</a>
+									</li>
+								{{/if}}
+								
+								{{each pages}}
+									<li {{if active}}class="active"{{/if}}>
+										<a href="${href}" title="Page ${num}">${num}</a>
+									</li>
+								{{/each}}
+								
+								{{if next}}
+									<li>
+										<a href="${nextHref}" title="Next">Next</a>
+									</li>
+								{{/if}}
+							</script>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
